@@ -1,8 +1,10 @@
 ﻿using ProjetoAula05.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ProjetoAula05.Entities
@@ -36,7 +38,11 @@ namespace ProjetoAula05.Entities
             get => _nome;
             set
             {
+                var regex = new Regex("^[A-Za-zÀ-Üà-ü\\s]{6,150}$");
+                if (!regex.IsMatch(value))
+                    throw new ValidationException("Nome do funcionário inválido.");
 
+                _nome = value;
             }
         }
 
