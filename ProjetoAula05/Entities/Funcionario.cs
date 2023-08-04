@@ -20,8 +20,8 @@ namespace ProjetoAula05.Entities
         private string _nome;
         private string _cpf;
         private string _matricula;
-        private DateTime _dataAdmissao;
-        private TipoContratacao _Tipo;
+        private DateTime? _dataAdmissao;
+        private TipoContratacao? _tipo;
 
         #endregion
 
@@ -72,6 +72,17 @@ namespace ProjetoAula05.Entities
             }
         }
 
+        public DateTime? DataAdmissao
+        {
+            get => _dataAdmissao;
+            set { _dataAdmissao = value;}
+        }
+
+        public TipoContratacao? Tipo
+        {
+            get => _tipo;
+            set { _tipo = value; }
+        }
 
 
         #endregion
