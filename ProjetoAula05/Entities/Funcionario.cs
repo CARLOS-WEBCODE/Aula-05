@@ -1,7 +1,7 @@
 ﻿using ProjetoAula05.Enums;
+using ProjetoAula05.Exceptions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -40,9 +40,35 @@ namespace ProjetoAula05.Entities
             {
                 var regex = new Regex("^[A-Za-zÀ-Üà-ü\\s]{6,150}$");
                 if (!regex.IsMatch(value))
-                    throw new ValidationException("Nome do funcionário inválido.");
+                    throw new ValidationsException("Nome do funcionário inválido.");
 
                 _nome = value;
+            }
+        }
+
+        public string Cpf
+        {
+            get => _cpf;
+            set
+            {
+                var regex = new Regex("^[0-9]{11}$");
+                if (!regex.IsMatch(value))
+                    throw new ValidationsException("CPF inválido (Informe 11 digitos numéricos");
+
+                _cpf = value;
+            }
+        }
+
+        public string Matricula
+        {
+            get => _matricula;
+            set
+            {
+                var regex = new Regex("^[0-9]{4}$");
+                if (!regex.IsMatch(value))
+                    throw new ValidationsException("Matrícula inválido (Informe 4 digitos numéricos");
+
+                _matricula = value;
             }
         }
 

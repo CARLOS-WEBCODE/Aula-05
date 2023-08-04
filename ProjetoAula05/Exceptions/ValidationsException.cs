@@ -11,6 +11,16 @@ namespace ProjetoAula05.Exceptions
     /// </summary>
     public class ValidationsException : Exception
     {
+        //atributo
+        private readonly string _mensagem;
 
+        //método construtor -> ctor + 2[tab]
+        public ValidationsException(string mensagem)
+        {
+            _mensagem = mensagem;
+        }
+
+        //sobrescrita do método Message da classe Exception
+        public override string Message => $"Ocorreu um erro de validação: {_mensagem}";
     }
 }
