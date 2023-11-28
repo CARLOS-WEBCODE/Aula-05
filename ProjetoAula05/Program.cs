@@ -15,7 +15,7 @@ namespace ProjetoAula05
                 var funcionario1 = new Funcionario()
                 {
                     Id = Guid.NewGuid(),
-                    Nome = "Sergio Mendes",
+                    Nome = "Antonio Barbosa",
                     Cpf = "12345678900",
                     Matricula = "1234",
                     DataAdmissao = DateTime.Now,
@@ -24,7 +24,7 @@ namespace ProjetoAula05
                 var funcionario2 = new Funcionario()
                 {
                     Id = Guid.NewGuid(),
-                    Nome = "Ana Paula",
+                    Nome = "Luana Barbosa",
                     Cpf = "98723451678",
                     Matricula = "1357",
                     DataAdmissao = DateTime.Now,
@@ -33,7 +33,7 @@ namespace ProjetoAula05
                 var funcionario3 = new Funcionario()
                 {
                     Id = Guid.NewGuid(),
-                    Nome = "João Pedro",
+                    Nome = "Bruna Barbosa",
                     Cpf = "78965127823",
                     Matricula = "4321",
                     DataAdmissao = DateTime.Now,
